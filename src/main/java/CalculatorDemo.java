@@ -1,4 +1,5 @@
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -28,6 +29,16 @@ public class CalculatorDemo {
     }
     @Test (priority=1)
     public void multiply() throws InterruptedException {
+        driver.findElementByAccessibilityId("open").isDisplayed();
+        driver.findElementById("travel").isEnabled();
+        driver.findElementByClassName("textView").isDisplayed();
+        driver.findElementByName("open").isDisplayed();
+        driver.findElementsByName("open").size(); // the plural returns a list?  so can't click because it's a list
+        driver.findElementByTagName("div").isDisplayed();
+        driver.findElementByImage("base64encoding").isDisplayed(); // so could save example images for image search
+        driver.findElementByAndroidUIAutomator("openButton").isDisplayed();
+        driver.findElements(By.className("textView")).clear();
+        driver.openNotifications();
         driver.findElementByXPath("//android.widget.Button[@text='5']").click();
         System.out.println("Clicked on 5");
         Thread.sleep(3000);
