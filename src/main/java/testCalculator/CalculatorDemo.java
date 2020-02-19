@@ -1,3 +1,5 @@
+package testCalculator;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,7 +26,8 @@ public class CalculatorDemo {
         //cap.setCapability("appActivity", "com.android.calculator2.Calculator");
         cap.setCapability("appActivity", "com.sec.android.app.popupcalculator.Calculator");
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+//        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+        driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     @Test (priority=1)
@@ -39,6 +42,12 @@ public class CalculatorDemo {
         driver.findElementByAndroidUIAutomator("openButton").isDisplayed();
         driver.findElements(By.className("textView")).clear();
         driver.openNotifications();
+
+        driver.findElementByClassName("android.widget.TextView").getAttribute("text");
+
+        driver.findElementByAndroidViewTag("string").getAttribute("text").matches("messages");
+
+
         driver.findElementByXPath("//android.widget.Button[@text='5']").click();
         System.out.println("Clicked on 5");
         Thread.sleep(3000);
