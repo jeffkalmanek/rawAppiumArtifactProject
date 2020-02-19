@@ -27,7 +27,7 @@ public class CalculatorDemo {
         cap.setCapability("appActivity", "com.sec.android.app.popupcalculator.Calculator");
 
 //        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-        driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+        driver = new AndroidDriver<WebElement>(new URL("http://0.0.0.0:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     @Test (priority=1)
