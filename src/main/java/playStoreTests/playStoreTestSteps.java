@@ -1,6 +1,5 @@
 package playStoreTests;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -26,7 +25,7 @@ public class playStoreTestSteps {
 
         //Instantiate Appium Driver
         try {
-            AppiumDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+            AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
             System.out.println("jefk - Appium is running");
 
         } catch (MalformedURLException e) {
